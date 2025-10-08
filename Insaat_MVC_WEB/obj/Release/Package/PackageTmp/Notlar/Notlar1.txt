@@ -1,0 +1,28 @@
+﻿Wb.config'te systemweb tagleri icindeki   <httpRuntime targetFramework="4.8.1" maxRequestLength="1024000" />     httpRuntime tag'nie maxRequestLength istegini ekleyip maxsimum alabilecegi istegi artırdık .... 
+
+---pageImage de silerken hata veriyordu---
+int? null gelebilir demek 
+
+     var yakalama = db.PageImage.Find(id);
+            //Burada Nullenable olabilir dedik yani boş gelebilir dedik 
+            int? pageid = yakalama.PageId;
+            db.PageImage.Remove(yakalama);
+            db.SaveChanges();
+
+            
+            return RedirectToAction("index", new {id=pageid } );
+            VE BÖYLE Bİ KOD YAZARAK İŞLEMİ CÖZDÜKKKK
+
+
+            project category deilde projeleri listeleyelim son 10 tanesini falan
+
+
+           SAYFALARIN İÇLERİNİ OLUŞTURACAGIZ DETAYLARINI YAPACAGIZ EN SON GALERİSİNİ YAPACAGIZ
+
+        ----   contact sayfası project sayfasın da hatalar var hocam iletişim formunu yaparken bana anlatabilir misiniz  ----
+    
+        ----   Navbar da hata var ----
+    
+    ------------------------Türkçeden İngilizceye cevirirken hata alıyoruz ona tekradan bakıcagım
+    ------------------------Email oluşturulacak Email şifresi Alınacak 
+    -----

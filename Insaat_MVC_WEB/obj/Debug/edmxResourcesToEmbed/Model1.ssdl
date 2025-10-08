@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_InsaatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="40" />
+    <Property Name="Whatsapp" Type="nvarchar" MaxLength="40" />
+    <Property Name="Email" Type="nvarchar" MaxLength="120" />
+    <Property Name="Adres" Type="nvarchar(max)" />
+    <Property Name="Map" Type="nvarchar(max)" />
+    <Property Name="LangId" Type="int" />
+  </EntityType>
+  <EntityType Name="Lang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="10" />
+    <Property Name="Code" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MailSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SenderEmail" Type="nvarchar" MaxLength="150" />
+    <Property Name="SenderPassword" Type="nvarchar" MaxLength="150" />
+    <Property Name="Port" Type="int" />
+    <Property Name="EnableSsl" Type="bit" />
+    <Property Name="ReceiverMail" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="PageCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageCategoryName" Type="nvarchar" MaxLength="120" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="MetaDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="MetaKey" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="LangId" Type="int" />
+  </EntityType>
+  <EntityType Name="PageImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="ThumbURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="PageId" Type="int" />
+  </EntityType>
+  <EntityType Name="Pages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="120" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="ThumbURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="MetaDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="MetaKey" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="PageCategoryId" Type="int" />
+    <Property Name="LangId" Type="int" />
+  </EntityType>
+  <EntityType Name="pdfFiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="80" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="400" />
+    <Property Name="LangId" Type="int" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="225" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="ThumbURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="MetaDescription" Type="nvarchar(max)" />
+    <Property Name="MetaKey" Type="nvarchar" MaxLength="225" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="ProjectCategoryId" Type="int" />
+    <Property Name="LangId" Type="int" />
+  </EntityType>
+  <EntityType Name="ProjectCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="250" />
+    <Property Name="MetaDescription" Type="nvarchar(max)" />
+    <Property Name="MetaKey" Type="nvarchar" MaxLength="225" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="LangId" Type="int" />
+  </EntityType>
+  <EntityType Name="ProjectImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="ThumbURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="ProjectId" Type="int" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SliderTitle" Type="nvarchar" MaxLength="120" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="MetaDescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="LangId" Type="int" />
+  </EntityType>
+  <EntityType Name="Social">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Youtube" Type="nvarchar" MaxLength="255" />
+    <Property Name="Instagram" Type="nvarchar" MaxLength="255" />
+    <Property Name="Linkedin" Type="nvarchar" MaxLength="255" />
+    <Property Name="Facebook" Type="nvarchar" MaxLength="255" />
+    <Property Name="Twitter" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Talent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TalentTitle" Type="nvarchar" MaxLength="150" />
+    <Property Name="MetaDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="LangId" Type="int" />
+  </EntityType>
+  <EntityType Name="Testimonials">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="MetaDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="LangId" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="150" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Role" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <Association Name="FK_Contact_Lang">
+    <End Role="Lang" Type="Self.Lang" Multiplicity="0..1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lang">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageCategory_Lang">
+    <End Role="Lang" Type="Self.Lang" Multiplicity="0..1" />
+    <End Role="PageCategory" Type="Self.PageCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lang">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageCategory">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageImage_Pages">
+    <End Role="Pages" Type="Self.Pages" Multiplicity="0..1" />
+    <End Role="PageImage" Type="Self.PageImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageImage">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_Lang">
+    <End Role="Lang" Type="Self.Lang" Multiplicity="0..1" />
+    <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lang">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_PageCategory">
+    <End Role="PageCategory" Type="Self.PageCategory" Multiplicity="0..1" />
+    <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="PageCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pdfFiles_Lang">
+    <End Role="Lang" Type="Self.Lang" Multiplicity="0..1" />
+    <End Role="pdfFiles" Type="Self.pdfFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lang">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="pdfFiles">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Lang">
+    <End Role="Lang" Type="Self.Lang" Multiplicity="0..1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lang">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_ProjectCategory">
+    <End Role="ProjectCategory" Type="Self.ProjectCategory" Multiplicity="0..1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ProjectCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectCategory_Lang">
+    <End Role="Lang" Type="Self.Lang" Multiplicity="0..1" />
+    <End Role="ProjectCategory" Type="Self.ProjectCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lang">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectCategory">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectImage_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="ProjectImage" Type="Self.ProjectImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectImage">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Slider_Lang">
+    <End Role="Lang" Type="Self.Lang" Multiplicity="0..1" />
+    <End Role="Slider" Type="Self.Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lang">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Talent_Lang">
+    <End Role="Lang" Type="Self.Lang" Multiplicity="0..1" />
+    <End Role="Talent" Type="Self.Talent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lang">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Talent">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Testimonials_Lang">
+    <End Role="Lang" Type="Self.Lang" Multiplicity="0..1" />
+    <End Role="Testimonials" Type="Self.Testimonials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lang">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Testimonials">
+        <PropertyRef Name="LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_InsaatModelStoreContainer">
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lang" EntityType="Self.Lang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MailSetting" EntityType="Self.MailSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageCategory" EntityType="Self.PageCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageImage" EntityType="Self.PageImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pages" EntityType="Self.Pages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pdfFiles" EntityType="Self.pdfFiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectCategory" EntityType="Self.ProjectCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectImage" EntityType="Self.ProjectImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Social" EntityType="Self.Social" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Talent" EntityType="Self.Talent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Testimonials" EntityType="Self.Testimonials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Contact_Lang" Association="Self.FK_Contact_Lang">
+      <End Role="Lang" EntitySet="Lang" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageCategory_Lang" Association="Self.FK_PageCategory_Lang">
+      <End Role="Lang" EntitySet="Lang" />
+      <End Role="PageCategory" EntitySet="PageCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageImage_Pages" Association="Self.FK_PageImage_Pages">
+      <End Role="Pages" EntitySet="Pages" />
+      <End Role="PageImage" EntitySet="PageImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_Lang" Association="Self.FK_Pages_Lang">
+      <End Role="Lang" EntitySet="Lang" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_PageCategory" Association="Self.FK_Pages_PageCategory">
+      <End Role="PageCategory" EntitySet="PageCategory" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pdfFiles_Lang" Association="Self.FK_pdfFiles_Lang">
+      <End Role="Lang" EntitySet="Lang" />
+      <End Role="pdfFiles" EntitySet="pdfFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Lang" Association="Self.FK_Project_Lang">
+      <End Role="Lang" EntitySet="Lang" />
+      <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_ProjectCategory" Association="Self.FK_Project_ProjectCategory">
+      <End Role="ProjectCategory" EntitySet="ProjectCategory" />
+      <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectCategory_Lang" Association="Self.FK_ProjectCategory_Lang">
+      <End Role="Lang" EntitySet="Lang" />
+      <End Role="ProjectCategory" EntitySet="ProjectCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectImage_Project" Association="Self.FK_ProjectImage_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="ProjectImage" EntitySet="ProjectImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Slider_Lang" Association="Self.FK_Slider_Lang">
+      <End Role="Lang" EntitySet="Lang" />
+      <End Role="Slider" EntitySet="Slider" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Talent_Lang" Association="Self.FK_Talent_Lang">
+      <End Role="Lang" EntitySet="Lang" />
+      <End Role="Talent" EntitySet="Talent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Testimonials_Lang" Association="Self.FK_Testimonials_Lang">
+      <End Role="Lang" EntitySet="Lang" />
+      <End Role="Testimonials" EntitySet="Testimonials" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

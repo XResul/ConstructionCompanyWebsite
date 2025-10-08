@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Insaat_MVC_WEB.Models.Entities.PageImage>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin_Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Resim Ekleme Sayfası</h1>
+
+@using (Html.BeginForm("AddImage", "PageImage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" name="PageId" id="PageId" value="@ViewContext.RouteData.Values["id"]" />
+    <input type="file" name="image" />
+    <br />
+    <br />
+    <button type="submit" class="btn btn-success">Yükle</button>
+}
+<br />
+<a href="~/Admin_Panel/Pages/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <img src="@item.ImageURL" style="max-width:70%;" class="a" />
+
+            <p>
+                <a href="~/Admin_Panel/PageImage/Delete/@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i> </a>
+            </p>
+        </div>
+    } 
+</div>
+<style>
+    .a {
+        display: flex;
+    }
+</style>

@@ -1,0 +1,101 @@
+﻿@model Insaat_MVC_WEB.Models.PageViewModel
+@{
+    ViewBag.Title = "pageDetail";
+  
+}
+
+<link href="~/Content/sona-master/lightbox/css/lightgallery.min.css" rel="stylesheet" />
+<link href="~/Content/sona-master/lightbox/css/main-white.css" rel="stylesheet" />
+
+<style>
+ 
+
+    .urun-galerisi {
+        float: left;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .urun {
+        width: 450px;
+        margin: 15px;
+        text-align: center;
+        overflow: hidden;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+
+        .urun img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+            .urun img:hover {
+                transform: scale(1.1);
+            }
+</style>
+<!-- Blog Details Hero Section Begin -->
+<section class="blog-details-hero set-bg" data-setbg="@Model.Pagess.ImageURL">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="bd-hero-text">
+                    <span>NOBLE TREE</span>
+                    <h2>@Model.Pagess.PageName</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Details Hero End -->
+<!-- Blog Details Section Begin -->
+<section class="blog-details-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="blog-details-text">
+                    <div class="bd-title">
+                        <p>
+                            @Html.Raw(Model.Pagess.Description)
+                        </p>
+
+                    </div>
+                    <div class="bd-pic">
+
+                        <div class="lightbox archive">
+
+                            @foreach (var item in Model.PageImages)
+                            {
+
+                                
+
+                                <div data-src="@item.ImageURL" class="article">
+                                   <div class="thumb">
+                                        <img src="@item.ThumbURL" alt="">
+                                    </div>
+
+                                </div>
+
+
+                            }
+                        </div>
+
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Details Section End -->
+
+
+
+<script src="~/Content/sona-master/lightbox/js/lightgallery-all.min.js"></script>
+<script src="~/Content/sona-master/lightbox/js/app.min.js"></script>
+ 

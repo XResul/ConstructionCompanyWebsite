@@ -1,0 +1,81 @@
+﻿@model Insaat_MVC_WEB.Models.ProjectViewModel
+
+
+<link href="~/Content/sona-master/lightbox/css/lightgallery.min.css" rel="stylesheet" />
+<link href="~/Content/sona-master/lightbox/css/main-white.css" rel="stylesheet" />
+
+
+<!-- Breadcrumb Section Begin -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    <h2>Projeler</h2>
+                    @*<div class="bt-option">
+                            <a href="./home.html">Home</a>
+                            <span>Rooms</span>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Section End -->
+<!-- Room Details Section Begin -->
+<section class="room-details-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="room-details-item">
+                    <img src="@Model.projectTakeOne.ImageURL" alt="" style="width:100%;">
+                    <div class="rd-text">
+                        <div class="rd-title">
+                            <h3>@Model.projectTakeOne.ProjectName</h3>
+                            <div class="rdt-right">
+                                <div class="rating">
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                </div>
+                                <a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue/Contact">İletişime Geç</a>
+                            </div>
+                        </div>
+                        <h2 style="font-size: 20px;">@Model.projectCategory.CategoryName</h2>
+
+                        <p class="f-para">
+                            @Html.Raw(Model.projectTakeOne.Description)
+                        </p>
+
+                        <div class="lightbox archive">
+
+                            @foreach (var item in Model.projectImages)
+                            {
+
+
+
+                                <div data-src="@item.ImageURL" class="article">
+                                    <div class="thumb">
+                                        <img src="@item.ThumbURL" alt="">
+                                    </div>
+
+                                </div>
+
+
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Room Details Section End -->
+
+<script src="~/Content/sona-master/lightbox/js/lightgallery-all.min.js"></script>
+<script src="~/Content/sona-master/lightbox/js/app.min.js"></script>

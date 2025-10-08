@@ -1,0 +1,52 @@
+﻿ @model IEnumerable<Insaat_MVC_WEB.Models.Entities.Project>
+ <!-- Breadcrumb Section Begin -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    <h2>@Resources.Default.Projelerimiz</h2>
+                    @*<div class="bt-option">
+                        <a href="./home.html">Home</a>
+                        <span>Rooms</span>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Section End -->
+<!-- Rooms Section Begin -->
+<section class="rooms-section spad">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="room-item">
+                        <img src="@item.ImageURL" alt="">
+                        <div class="ri-text">
+                            <h4>@item.ProjectName</h4>
+                            <h3>@item.ProjectCategory.CategoryName</h3>
+
+                            <p>
+                               @item.MetaDescription
+                            </p>
+                            <a href="~/Project/projectDetail/@item.Id" class="primary-btn">@Resources.Default.Detaylar</a>
+                            @* Buradan Project detail yapıp proje detaylarına gidecegiz *@
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @*<div class="col-lg-12">
+            <div class="room-pagination">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">Next <i class="fa fa-long-arrow-right"></i></a>
+            </div>
+        </div>*@
+        </div>
+    </div>
+</section>
+<!-- Rooms Section End -->

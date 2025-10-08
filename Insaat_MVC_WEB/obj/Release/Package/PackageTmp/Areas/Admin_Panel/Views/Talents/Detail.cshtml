@@ -1,0 +1,48 @@
+﻿@model Insaat_MVC_WEB.Models.Entities.Talent
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin_Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detaylar Sayfası</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Başlık
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TalentTitle)
+            <hr />
+        </dd>
+
+        <dt>
+            Açıklama
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescription)
+            <hr />
+        </dd>
+
+        <dt>
+            Dil
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lang.Name)
+            <hr />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="~/Admin_Panel/Talents/Edit/@Model.Id" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+</p>
+<hr />
+<p>
+    <a href="~/Admin_Panel/Talents/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+</p>

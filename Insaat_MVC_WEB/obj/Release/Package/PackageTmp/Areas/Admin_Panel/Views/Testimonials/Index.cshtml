@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Insaat_MVC_WEB.Models.Entities.Testimonials>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin_Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Referanslar Sayfası</h2>
+
+<p>
+    <a href="~/Admin_Panel/Testimonials/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            İsim
+        </th>
+        <th>
+            Açıklama
+        </th>
+     
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaDescription)
+        </td>
+  
+        <td>
+            <a href="~/Admin_Panel/Testimonials/Edit/@item.Id" class="btn btn-warning"><i class="fa fa-pencil"></i> </a>
+            <br />
+            <br />
+            <a href="~/Admin_Panel/Testimonials/Detail/@item.Id" class="btn btn-info"><i class="fa fa-info"></i> </a>
+            <br />
+            <br />
+
+            <a href="~/Admin_Panel/Testimonials/Delete/@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i> </a>
+        </td>
+    </tr>
+}
+
+</table>

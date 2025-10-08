@@ -1,0 +1,107 @@
+﻿@model Insaat_MVC_WEB.Models.Entities.Pages
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin_Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Resim
+        </dt>
+
+        <dd>
+            <img src="@Model.ImageURL" style="max-width:70%;" />
+            <hr />
+        </dd>
+
+        <dt>
+            Sayfa Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageName)
+            <hr />
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescription)
+            <hr />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaKey)
+            <hr />
+        </dd>
+
+        <dt>
+            Durum
+        </dt>
+
+        <dd>
+            @if (Model.Status == true)
+            {
+                <div class="aktif"></div>
+            }
+            else
+            {
+                <div class="pasif"></div>
+            }
+            <hr />
+        </dd>
+
+        <dt>
+            Dil
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lang.Name)
+            <hr />
+        </dd>
+
+        <dt>
+            Kategori Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageCategory.PageCategoryName)
+            <hr />
+        </dd>
+
+
+
+        <dt>
+            Açıklama
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Description)
+            <hr />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="~/Admin_Panel/Pages/Edit/@Model.Id" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+
+</p>
+<hr />
+<p>
+    <a href="~/Admin_Panel/Pages/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+
+</p>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Insaat_MVC_WEB.Models.Entities.Slider>
+
+<section class="hero-section" style="min-height: 600px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hero-text">
+                    @*<h1>NOBLE TREE</h1>*@
+                    @*<p>
+                            Bizimle Kariyer Fırsatı
+                        </p>*@
+                    @*<a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue/Contact" class="primary-btn">@Resources.Default.iletisim</a>*@
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="hero-slider owl-carousel">
+        @foreach (var item in Model)
+        {
+
+            <div class="hs-item set-bg" style="position:relative;" data-setbg="@item.ImageURL">
+                <div class="bg-overloy">
+
+                </div>
+                <div class="slider-title">
+                    <h2>@item.SliderTitle</h2>
+                    <br />
+                    <p>@item.MetaDescription</p>
+                </div>
+            </div>
+
+        }
+
+    </div>
+</section>
+
+ 

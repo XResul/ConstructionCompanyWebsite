@@ -1,0 +1,34 @@
+﻿@model Insaat_MVC_WEB.Models.HomeViewModel
+@{
+    ViewBag.Title = "Index";
+   
+}
+
+@*<h1>@Resources.Default.naber</h1>
+    <h1>@Resources.Default.merhaba</h1>*@
+@* Hocam sagolun   *@
+@* Hocam bunlar neden değişmiyor *@
+
+@* Header Baslangıc *@
+@Html.Partial("HeroPartial", Model.Sliders.ToList())
+@* Header Bitiş *@
+
+@* AboutWe Baslangıc *@
+@Html.Partial("AboutWePartial", Model.Page)
+@* AboutWe Bitiş *@
+
+@* Talents Baslangıc *@
+@Html.Partial("TalentsPartial",Model.Talents.ToList())
+@* Talents Bitiş *@
+
+
+@* ProjectCategory Card Baslangıc *@
+@Html.Partial("ProjectHomePartial",Model.Projects.ToList())
+@* ProjectCategory Card Bitiş *@
+
+@* ProjectCategory Card Baslangıc *@
+@*@Html.Partial("TestimonialsPartial", Model.Testimonials.ToList())*@
+@* ProjectCategory Card Bitiş *@
+
+
+

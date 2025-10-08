@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Insaat_MVC_WEB.Models.Entities.pdfFiles>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin_Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kataloglar Sayfası</h2>
+
+<p>
+    <a href="~/Admin_Panel/PdfFiles/Create" class="btn btn-primary">Yeni</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Dosya Adı
+        </th>
+        <th>
+            Dosya Yolu
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FilePath)
+        </td>
+   
+        <td>
+            <a href="~/Admin_Panel/PdfFiles/Edit/@item.Id" class="btn btn-warning">Düzenle</a>
+            <a href="~/Admin_Panel/PdfFiles/Delete/@item.Id" class="btn btn-danger">Kaldır</a>
+
+        </td>
+    </tr>
+}
+
+</table>

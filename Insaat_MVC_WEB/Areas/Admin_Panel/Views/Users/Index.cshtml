@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Insaat_MVC_WEB.Models.Entities.Users>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin_Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kullanıcı Sayfası</h2>
+
+<p>
+    <a href="~/Admin_Panel/Users/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserPassword)
+        </th>
+  
+    
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserPassword)
+        </td>
+
+
+        <td>
+            <a href="~/Admin_Panel/Users/Edit/@item.UserId" class="btn btn-warning"><i class="fa fa-pencil"></i> </a>
+
+            <a href="~/Admin_Panel/Users/Detail/@item.UserId" class="btn btn-info"><i class="fa fa-info"></i> </a>
+
+            <a href="~/Admin_Panel/Users/Delete/@item.UserId" class="btn btn-danger"><i class="fa fa-trash"></i> </a>
+        </td>
+    </tr>
+}
+
+</table>

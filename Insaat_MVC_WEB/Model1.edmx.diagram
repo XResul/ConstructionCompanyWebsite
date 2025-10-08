@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="45d8bc77e0d44146b9e3d977df3ee367" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="db_InsaatModel.Contact" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.Lang" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.PageCategory" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.PageImage" Width="1.5" PointX="8.625" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.Pages" Width="1.5" PointX="6.375" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.pdfFiles" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.Project" Width="1.5" PointX="6" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.ProjectCategory" Width="1.5" PointX="3.625" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.ProjectImage" Width="1.5" PointX="8.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.Slider" Width="1.5" PointX="3" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.Social" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.Talent" Width="1.5" PointX="3" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.Testimonials" Width="1.5" PointX="3" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_InsaatModel.Users" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="db_InsaatModel.FK_Contact_Lang" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_PageCategory_Lang" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_Pages_Lang" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_pdfFiles_Lang" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_Project_Lang" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_ProjectCategory_Lang" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_Slider_Lang" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_Talent_Lang" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_Testimonials_Lang" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_Pages_PageCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_PageImage_Pages" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_Project_ProjectCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="db_InsaatModel.FK_ProjectImage_Project" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="db_InsaatModel.MailSetting" Width="1.5" PointX="5.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

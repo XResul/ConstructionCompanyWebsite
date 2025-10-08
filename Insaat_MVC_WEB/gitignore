@@ -1,0 +1,26 @@
+﻿# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build
+bin/
+obj/
+publish/
+
+# NuGet
+*.nupkg
+packages/
+
+# Rider / IDE
+.idea/
+
+# ASP.NET
+appsettings.*.json
+secrets.json
+
+# Other
+*.log
+*.sqlite

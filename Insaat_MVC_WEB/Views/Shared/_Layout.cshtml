@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Html.Action("HeadPartial", "LayoutRepository")
+</head>
+<body>
+    @* Header Baslangıc *@
+    @Html.Action("HeaderPartial", "LayoutRepository")
+    @* Header Bitiş *@
+
+   
+
+    <div class="">
+        @RenderBody()
+
+    </div>
+
+    @* Script Baslangıc *@
+    @Html.Action("FooterPartial", "LayoutRepository")
+    @* Script Bitiş *@
+
+    @* Script Baslangıc *@
+    @Html.Action("ScriptPartial", "LayoutRepository")
+    @* Script Bitiş *@
+</body>
+</html>
+@* Hocam bi sn ekran kaydına alayım mı?  pardo al*@

@@ -1,0 +1,52 @@
+﻿@model Insaat_MVC_WEB.Models.ProjectViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!-- Breadcrumb Section Begin -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    <h2>@Model.projectCategory.CategoryName</h2>
+                    <div class="bt-option">
+                        <a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue">@Resources.Default.AnaSayfa
+                        </a>
+                        <span>@Model.projectCategory.CategoryName</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Section End -->
+<!-- Rooms Section Begin -->
+<section class="rooms-section spad">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model.projects)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="room-item">
+                        <img src="@item.ImageURL" alt="">
+                        <div class="ri-text">
+                            <h4>@item.ProjectName</h4>
+
+                            <p>
+                                @item.MetaDescription
+                            </p>
+                            <a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue/Project/projectDetail/@item.Id" class="primary-btn">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</section>
+<!-- Rooms Section End -->

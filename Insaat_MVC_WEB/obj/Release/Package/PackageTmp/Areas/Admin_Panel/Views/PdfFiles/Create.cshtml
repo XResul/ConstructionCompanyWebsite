@@ -1,0 +1,38 @@
+﻿@model Insaat_MVC_WEB.Models.Entities.pdfFiles
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin_Panel/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Yeni Katalog</h2>
+
+@using (Html.BeginForm("Create", "PdfFiles", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FileName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FileName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FileName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FilePath, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="file" class="form-control" />
+
+        </div>
+    </div>
+
+    <div>
+
+        <button class="btn btn-primary" type="submit">Kaydet</button>
+    </div>
+
+
+}

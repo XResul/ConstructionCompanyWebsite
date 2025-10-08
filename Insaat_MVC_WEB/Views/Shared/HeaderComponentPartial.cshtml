@@ -1,0 +1,279 @@
+﻿@model Insaat_MVC_WEB.Models.HeaderViewModel
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Offcanvas Menu Section Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="canvas-open">
+    <i class="icon_menu"></i>
+</div>
+<div class="offcanvas-menu-wrapper">
+    <div class="canvas-close">
+        <i class="icon_close"></i>
+    </div>
+
+    <div class="header-configure-area">
+        <div class="language-option">
+            @{
+
+
+                var flagurl1 = "/Content/sona-master/img";
+                string langname1 = "TR";
+
+                if (ViewContext.RouteData.Values["lang"] == null || ViewContext.RouteData.Values["lang"].ToString() == "tr")
+                {
+
+                    flagurl1 += "/tr.png";
+
+                }
+                else
+                {
+                    flagurl1 += "/en.png";
+                    langname1 = "EN";
+                }
+
+            }
+            <img src="@flagurl1" alt="">
+            <span>@langname1 <i class="fa fa-angle-down"></i></span>
+            <div class="flag-dropdown">
+                <ul>
+                    <li><a href="/">TR</a></li>
+                    <li><a href="/en">EN</a></li>
+                    @* Hocam anladım burayı  *@
+                </ul>
+            </div>
+        </div>
+    </div>
+    <nav class="mainmenu mobile-menu">
+        <ul>
+            <li class="active"><a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue">@Resources.Default.AnaSayfa</a></li>
+
+
+          
+
+            <li>
+                <a href="#">@Resources.Default.Kurumsal</a>
+                <ul class="dropdown">
+                    @foreach (var item in Model.pages.Where(p => p.PageCategoryId == 1).ToList())
+                    {
+                        <li>
+                            <a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue/Page/pageDetail/@item.Id">
+                                @item.PageName
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </li>
+
+
+
+            <li>
+                <a href="#">@Resources.Default.Projeler</a>
+                <ul class="dropdown">
+                    @foreach (var item in Model.projectCategories)
+                    {
+                        <li>
+                            <a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue/Project/index/@item.Id">
+                                @item.CategoryName
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#">@Resources.Default.Katalog</a>
+                <ul class="dropdown">
+                    @foreach (var item in Model.PdfFiles)
+                    {
+                        <li>
+                            <a href="@item.FilePath" target="_blank">
+                                @item.FileName
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </li>
+
+            @*<li><a href="#">News</a></li>*@
+            <li><a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue/Contact">@Resources.Default.iletisim</a></li>
+        </ul>
+    </nav>
+    <div id="mobile-menu-wrap"></div>
+    <div class="top-social">
+        <a href="@Model.social.Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="@Model.social.Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="@Model.social.Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="@Model.social.Youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+        <a href="@Model.social.Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+    </div>
+    <ul class="top-widget">
+        <li>
+            <i class="fa fa-phone"></i>
+            <a href="Tel:@Model.contact.Phone" style="text-decoration:none; color:black">@Model.contact.Phone</a>
+
+        </li>
+        <li>
+            <i class="fa fa-envelope"></i>
+
+            <a href="mailto:@Model.contact.Email" style="color: black; text-decoration: none;">
+                @Model.contact.Email
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- Offcanvas Menu Section End -->
+
+<header class="header-section">
+    <div class="top-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="tn-left">
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <a href="Tel:@Model.contact.Phone" style="text-decoration:none; color:black">@Model.contact.Phone</a>
+
+                        </li>
+
+                        <li>
+                            <i class="fa fa-envelope"></i>
+
+                            <a href="mailto:@Model.contact.Email" style="color: black; text-decoration: none;">
+                                @Model.contact.Email
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tn-right">
+                        <div class="top-social">
+                            <a href="@Model.social.Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="@Model.social.Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="@Model.social.Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="@Model.social.Youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="@Model.social.Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </div>
+                        <div class="language-option">
+
+                            @{
+
+
+                                var flagurl = "/Content/sona-master/img";
+                                string langname = "TR";
+
+                                if (ViewContext.RouteData.Values["lang"] == null || ViewContext.RouteData.Values["lang"].ToString() == "tr")
+                                {
+
+                                    flagurl += "/tr.png";
+
+                                }
+                                else
+                                {
+                                    flagurl += "/en.png";
+                                    langname = "EN";
+                                }
+
+                            }
+                            <img src="@flagurl" alt="">
+                            <span>@langname <i class="fa fa-angle-down"></i></span>
+                            <div class="flag-dropdown">
+                                <ul>
+                                    <li><a href="/">TR</a></li>
+                                    <li><a href="/en">EN</a></li>
+                                    @* Hocam anladım burayı  *@
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="logo">
+                        <a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue">
+                            <img src="~/Content/sona-master/img/nobleeTreeLOGO.png" alt="" style="min-height: 55px;">
+                        </a>
+                        <br />
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="nav-menu" style="line-height: 60px;">
+                        <nav class="mainmenu">
+                            <ul>
+                                <li class="active"><a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue">@Resources.Default.AnaSayfa</a></li>
+
+
+                                @*<li><a href='@Insaat_MVC_WEB.Controllers.BaseController.RouteValue.ToString()/kurumsal'>Kurumsal</a></li>*@
+
+                                <li>
+                                    <a href="#">@Resources.Default.Kurumsal</a>
+                                    <ul class="dropdown">
+                                        @foreach (var item in Model.pages.Where(p => p.PageCategoryId == 1).ToList())
+                                        {
+                                            <li>
+                                                <a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue/page/pageDetail/@item.Id">
+                                                    @item.PageName
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+
+
+
+                                <li>
+                                    <a href="#">@Resources.Default.Projeler</a>
+                                    <ul class="dropdown">
+                                        @foreach (var item in Model.projectCategories)
+                                        {
+                                            <li>
+                                                <a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue/Project/index/@item.Id">
+                                                    @item.CategoryName
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">@Resources.Default.Katalog</a>
+                                    <ul class="dropdown">
+                                        @foreach (var item in Model.PdfFiles)
+                                        {
+                                            <li>
+                                                <a href="@item.FilePath" target="_blank">
+                                                    @item.FileName
+                                                </a>
+                                            </li>
+                                            @*<li>
+                                                    <a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue/PdfFiles/index/@item.Id" target="_blank">
+                                                        @item.FileName
+                                                    </a>
+                                                </li>*@
+                                        }
+                                    </ul>
+                                </li>
+
+                                @*<li><a href="#">News</a></li>*@
+                                <li><a href="@Insaat_MVC_WEB.Controllers.BaseController.RouteValue/Contact">@Resources.Default.iletisim</a></li>
+                            </ul>
+                        </nav>
+                        @*<div class="nav-right search-switch">
+                                <i class="icon_search"></i>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+

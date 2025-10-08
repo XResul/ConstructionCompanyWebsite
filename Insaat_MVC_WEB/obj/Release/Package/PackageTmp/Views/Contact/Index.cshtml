@@ -1,0 +1,72 @@
+﻿@model Insaat_MVC_WEB.Models.ContactViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="contact-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="contact-text">
+                    <h2>@Model.Contact.Title</h2>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="c-o">@Resources.Default.Adres:</td>
+                                <td>@Model.Contact.Adres</td>
+                            </tr>
+                            <tr>
+                                <td class="c-o">@Resources.Default.Telefon:</td>
+                                <td>  <a href="Tel:@Model.Contact.Phone" style="text-decoration: none; color: black; ">@Model.Contact.Phone</a></td>
+                            </tr>
+                            <tr>
+                                <td class="c-o">Email:</td>
+                                <td>
+                                    <a href="mailto:@Model.Contact.Email" style=" text-decoration: none; color: black;">
+
+                                        @Model.Contact.Email
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="c-o">Whatsapp:</td>
+                                <td>
+                                    <a href="https://wa.me/@Model.Contact.Whatsapp.Trim().Replace(" ","")" style="text-decoration: none; color: black" target="_blank">  @Model.Contact.Whatsapp</a>
+                                </td>
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-7 offset-lg-1">
+                <form action="/Contact/iletisimForm" method="post" class="contact-form">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" name="ad" placeholder="Your Name">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" name="email" placeholder="Your Email">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" name="konu" placeholder="Your subject">
+                        </div>
+                        <div class="col-lg-12">
+                            <textarea name="mesaj" placeholder="Your Message"></textarea>
+                            <button type="submit">@Resources.Default.Gonder</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="map">
+            <iframe src="@Model.Contact.Map"
+                    height="470" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+    </div>
+</section>
