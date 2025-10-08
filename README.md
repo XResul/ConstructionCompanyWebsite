@@ -5,8 +5,8 @@ Features: project showcase, contact form, responsive layout, admin panel (if inc
 
 ## Tech
 - ASP.NET MVC (C#)
-- MS SQL / EF Core (if used)
-- Bootstrap / Tailwind (if used)
+- MSSQL
+- Bootstrap / CSS
 
 ## Run locally
 1. Open solution in Visual Studio
